@@ -1,0 +1,311 @@
+{
+  "openapi": "3.1.0",
+  "info": infoObject,
+  "jsonSchemaDialect": "",
+  "servers": [serverObject
+  ],
+  "paths": pathsObject,
+  "webhooks": {
+    [
+      "": pathItemObject | referenceObject
+    ]
+  },
+  "components": componentsObject,
+  "security": [securityRequirementObject
+  ],
+  "tags": [tagObject
+  ],
+  "exeternalDocs": externalDocumentationObject
+}
+
+#infoObject
+{
+  "title": "",
+  "summary": "",
+  "description": "",
+  "termsOfService": "",
+  "contact": contactObject,
+  "license": licenseObject,
+  "version": ""
+}
+
+#contactObject
+{
+  "name": "",
+  "url": "",
+  "email": ""
+}
+
+#licenseObject
+{
+  "name": "",
+  "identifier": "",
+  "url": ""
+}
+
+#serverObject
+{
+  "url": "",
+  "description": "",
+  "variables": {
+    "": serverVariableObject
+  }
+}
+
+#serverVariableObject
+{
+  "enum": [
+    ""
+  ],
+  "default": "",
+  "description": ""
+}
+
+#pathsObject
+{
+  "/{path}": pathItemObject
+}
+
+#pathItemObject
+{
+  "$ref": "",
+  "summary": "",
+  "description": "",
+  "get": operationObject,
+  "put": operationObject,
+  "post": operationObject,
+  "delete": operationObject,
+  "options": operationObject,
+  "head": operationObject,
+  "patch": operationObject,
+  "trace": operationObject,
+  "servers": [serverObject
+  ],
+  "parameters": [parameterObject | referenceObject
+  ]
+}
+
+#operationObject
+{
+  "tags": [
+    ""
+  ],
+  "summary": "",
+  "description": "",
+  "externalDocs": externalDocumentationObject,
+  "operationId": "",
+  "parameters": [parametersObject | referenceObject
+  ],
+  "requestBody": requestBodyObject | referenceObject,
+  "responses": responsesObject,
+  "callbacks": {
+    "": callbackObject | referenceObject
+  },
+  "deprecated": boolean,
+  "security": [securityRequirementObject
+  ],
+  "servers": [serverObject
+  ]
+}
+
+#requestBodyObject
+{
+  "description": "",
+  "content": {
+    "": mediaTypeObject
+  },
+  "required": ""
+}
+
+#responseBodyObject
+{
+  "default": "",
+  "{httpStatusCode}": responseObject | referenceObject
+}
+
+#responseObject
+{
+  "description": "",
+  "headers": {
+    "": headerObject | referenceObject
+  }
+"content": {
+    "": mediaTypeObject
+  },
+  "links": {
+    "": linkObject | referenceObject
+  }
+}
+#mediaTypeObject
+{
+  "schema": schemaObject,
+  "example": "",
+  "examples": {
+    "": exampleObject | referenceObject
+  },
+  "encoding": encodingObject
+}
+
+#encodingObject
+{
+  "contentType": "",
+  "headers": {
+    "": headerObject | referenceObject
+  },
+  "style": "",
+  "explode": "",
+  "allowReserved": boolean
+}
+
+#headerObject
+{
+  "description": "",
+  "required": boolean,
+  "deprecated": boolean,
+  "allowEmptyValue": boolean,
+  "example": {},
+  "schema": {
+    schemaObject
+  }
+}
+
+#externalDocumentationObject
+{
+  "description": "",
+  "url": ""
+}
+
+#parameterObject
+{
+  "name": "",
+  "in": [
+    "query",
+    "header",
+    "path",
+    "cookie"
+  ],
+  "description": "",
+  "required": boolean,
+  "deprecated": boolean,
+  "allowEmptyValue": boolean,
+  "style": [
+    "matrix",
+    "label",
+    "form",
+    "simple",
+    "spaceDelimited",
+    "pipeDelimited, deepObject"
+  ],
+  "explode": boolean,
+  "allowReserved": boolean,
+  "schema": schemaObject,
+  "example": {},
+  "examples": {
+    "": exampleObject | referenceObject
+  },
+  "content": {
+    "": mediaTypeObject
+  },
+}
+
+#exampleObject
+{
+  "summary": "",
+  "description": "",
+  "value": "",
+  "externalValue": ""
+}
+
+#schemaObject
+{
+  "allOf" | "anyOf" | "oneof" | "not"{
+    "title": "",
+    "description": "",
+    "type": "",
+    "properties": propertiesObject,
+    "required": [],
+    "discriminator": discriminiatorObject,
+    "xml": xmlObject,
+    "externalDocs": externalDocumentationObject
+  }
+
+#referenceObject
+{
+    "$ref": "",
+    "summary": "",
+    "description": ""
+  }
+
+#propertiesObject
+{
+    "": {
+      "description": "",
+      "type": ""
+    },
+    "tags": {
+      "description": "",
+      "type": "",
+      "items": {
+        "type": ""
+      }
+    }
+  }
+
+#discriminatorObject
+{
+    "propertyName": "",
+    "mapping": {
+      "": ""
+    }
+  }
+}
+
+#xmlObject
+{
+  "name": "",
+  "namespace": "",
+  "prefix": "",
+  "attribute": boolean,
+  "wrapped": boolean
+}
+
+#componentsObject
+{
+  "schemas": {
+    "": schemaObject
+  },
+  "responses": {
+    "": responseObject | referenceobject
+  },
+  "parameters": {
+    "": parameterObject | referenceObject
+  },
+  "examples": {
+    "": exampleObject | referenceObject
+  },
+  "requestBodies": {
+    "": requestBodyObject | referenceObject
+  },
+  "headers": {
+    "": headerObject | referenceObject
+  },
+  "securitySchemes": {
+    "": securitySchemeObject | referenceObject
+  },
+  "links": {
+    "": linkObject | referenceObject
+  },
+  "callbacks": {
+    "": callbackobject | referenceObject
+  },
+  "pathItems": {
+    "": pathItemObject | referenceObject
+  }
+}
+
+#tagObject
+{
+  "name": "",
+  "description": "",
+  "externalDocs": externalDocsObject
+}
