@@ -4,11 +4,9 @@ defmodule Info do
 
   def gen_info(module) do
     info = module.project()
-    title = Keyword.get(info)
-    summary = Keyword.get()
-    summary = Keyword.get()
 
-    List.first(info)
+
+    # changeset()
   end
 
   def types() do
